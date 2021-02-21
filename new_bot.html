@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sustainability and Wellness</title>
+	<link rel = "icon" href =  "https://i.dlpng.com/static/png/6986235_preview.png" type = "image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dist/jquery.convform.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+		*{
+		margin: 0;
+		padding: 0;
+		outline: none;
+		box-sizing: border-box;
+		font-family: 'Montserrat', sans-serif;
+		}
+		body{
+		background: #f2f2f2;
+		}
+		nav{
+		background: #171c24;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		height: 70px;
+		padding: 0 100px;
+		}
+		nav .logo{
+		color: #fff;
+		font-size: 30px;
+		font-weight: 600;
+		letter-spacing: -1px;
+		}
+		nav .nav-items{
+		display: flex;
+		flex: 1;
+		padding: 0 0 0 40px;
+		}
+		nav .nav-items li{
+		list-style: none;
+		padding: 0 15px;
+		}
+		nav .nav-items li a{
+		color: #fff;
+		font-size: 18px;
+		font-weight: 500;
+		text-decoration: none;
+		}
+		nav .nav-items li a:hover{
+		color:#ff995e;
+		}
+		
+		.kk a{
+		color: #fff;
+		font-size: 18px;
+		font-weight: 500;
+		text-decoration: none;
+		}
+		.kk a:hover{
+		color:#ff995e;
+		}
+		
+		nav form{
+		display: flex;
+		height: 40px;
+		padding: 2px;
+		background: #1e232b;
+		min-width: 18%!important;
+		border-radius: 2px;
+		border: 1px solid rgba(155,155,155,0.2);
+		}
+		nav form .search-data{
+		width: 100%;
+		height: 100%;
+		padding: 0 10px;
+		color: #fff;
+		font-size: 17px;
+		border: none;
+		font-weight: 500;
+		background: none;
+		}
+		nav form button{
+		padding: 0 15px;
+		color: #fff;
+		font-size: 17px;
+		background: #1991e0;
+		border: none;
+		border-radius: 2px;
+		cursor: pointer;
+		}
+		nav form button:hover{
+		background:#ff995e;
+		}
+		nav .menu-icon,
+		nav .cancel-icon,
+		nav .search-icon{
+		width: 40px;
+		text-align: center;
+		margin: 0 50px;
+		font-size: 18px;
+		color: #fff;
+		cursor: pointer;
+		display: none;
+		}
+		nav .menu-icon span,
+		nav .cancel-icon,
+		nav .search-icon{
+		display: none;
+		}
+		@media (max-width: 1245px) {
+		nav{
+		  padding: 0 50px;
+		}
+		}
+		@media (max-width: 1140px){
+		nav{
+		  padding: 0px;
+		}
+		img{
+			position:fixed;
+			top:0;
+			left:0;
+		}
+		nav .logo{
+		  flex: 2;
+		  text-align: center;
+		}
+		nav .nav-items{
+		  position: fixed;
+		  z-index: 99;
+		  top: 70px;
+		  width: 100%;
+		  left: -100%;
+		  height: 100%;
+		  padding: 10px 50px 0 50px;
+		  text-align: center;
+		  background: #14181f;
+		  display: inline-block;
+		  transition: left 0.3s ease;
+		}
+		nav .nav-items.active{
+		  left: 0px;
+		}
+		nav .nav-items li{
+		  line-height: 40px;
+		  margin: 30px 0;
+		}
+		nav .nav-items li a{
+		  font-size: 20px;
+		}
+		nav form{
+		  position: absolute;
+		  top: 80px;
+		  right: 50px;
+		  opacity: 0;
+		  pointer-events: none;
+		  transition: top 0.3s ease, opacity 0.1s ease;
+		}
+		nav form.active{
+		  top: 95px;
+		  opacity: 1;
+		  pointer-events: auto;
+		}
+		nav form:before{
+		  position: absolute;
+		  content: "";
+		  top: -13px;
+		  right: 0px;
+		  width: 0;
+		  height: 0;
+		  z-index: -1;
+		  border: 10px solid transparent;
+		  border-bottom-color: #1e232b;
+		  margin: -20px 0 0;
+		}
+		nav form:after{
+		  position: absolute;
+		  content: '';
+		  height: 60px;
+		  padding: 2px;
+		  background: #1e232b;
+		  border-radius: 2px;
+		  min-width: calc(100% + 20px);
+		  z-index: -2;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-50%, -50%);
+		}
+		nav .menu-icon{
+		  display: block;
+		}
+		nav .search-icon,
+		nav .menu-icon span{
+		  display: block;
+		}
+		nav .menu-icon span.hide,
+		nav .search-icon.hide{
+		  display: none;
+		}
+		nav .cancel-icon.show{
+		  display: block;
+		}
+		}
+		.content{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		text-align: center;
+		transform: translate(-50%, -50%);
+		}
+		.content header{
+		font-size: 30px;
+		font-weight: 700;
+		}
+		.content .text{
+		font-size: 30px;
+		font-weight: 700;
+		}
+		.space{
+		margin: 10px 0;
+		}
+		nav .logo.space{
+		color: rgb(38, 145, 233);
+		padding: 0 5px 0 0;
+		}
+		@media (max-width: 980px){
+		nav .menu-icon,
+		nav .cancel-icon,
+		nav .search-icon{
+		  margin: 0 20px;
+		}
+		nav form{
+		  right: 30px;
+		}
+		}
+		@media (max-width: 350px){
+		nav .menu-icon,
+		nav .cancel-icon,
+		nav .search-icon{
+		  margin: 0 10px;
+		  font-size: 16px;
+		}
+		}
+		
+		
+		.content{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		}
+		.content header{
+		font-size: 30px;
+		font-weight: 700;
+		}
+		.content .text{
+		font-size: 30px;
+		font-weight: 700;
+		}
+		.content .space{
+		margin: 10px 0;
+		}
+		
+		
+		#customers {
+		  font-family: Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		#customers th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+		#customers td{
+		  border: 1px solid #ddd;
+		  padding: 4px;
+		}
+
+		#customers tr{
+		background-color: #87c9ff;
+		}
+
+		#customers tr:hover {background-color: #ddd;}
+
+		#customers th {
+		  padding-top: 12px;
+		  padding-bottom: 12px;
+		  text-align: left;
+		  background-color: #383538;
+		  color: white;
+		}
+		
+		input[type=text] {
+		  padding: 0px 0px;
+		  margin: 0;
+		  border: 0px solid white;
+		  border-radius: 0px;
+		}
+		footer{
+		   position: fixed;
+		   left: 0;
+		   bottom: 0;
+		   width: 100%;
+		   text-align: center;
+		}
+	</style>
+<body>
+	<nav>
+		<img src="https://cdn4.iconfinder.com/data/icons/yoga-meditation-exercise-1/128/14-512.png" width="5%">
+		  <div class="menu-icon">
+	<span class="fas fa-bars"></span></div>
+	<div class="logo">
+	&nbsp;Sustainability and Wellness</div>
+	<div class="nav-items">
+		<li><a href="D:\vik\public\employee_page.html">Home</a></li>
+	<li><a href="chatbot_final/new_bot.html">Chat Support</a></li>
+	
+	
+	</div>
+	<div class="search-icon">
+	<span class="fas fa-search"></span></div>
+	<div class="cancel-icon">
+	<span class="fas fa-times"></span></div>
+	<form action="#">
+			<input type="search" class="search-data" placeholder="Search" required>
+			<button type="submit" class="fas fa-search"></button>
+	 </form>
+	 <li class="kk" ><a href="D:\vik\public\index.html">Sign Out</a></li>
+	</nav>
+	<section id="demo">
+	    <div class="vertical-align">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-xs-offset-0">
+	                    <div class="card no-border">
+	                        <div id="chat" class="conv-form-wrapper">
+	                            <form action="" method="GET" class="hidden">
+	                                <select data-conv-question="Hello! are you came for search for medical tips " name="first-question">
+	                                    <option value="no">NO</option>
+	                                    <option value="yes">YES</option>
+									
+									</select>
+	                                <input type="text" name="name" data-conv-question="Which disease medical tips you want to know?">
+																  
+	                                <select  data-conv-question="Do you want to continue search for the tips for other diseases?" ) name="first-question">
+	                                    <option value="no">NO</option>
+	                                    <option value="yes">YES</option>	
+
+
+	                                </select>
+	                                
+									<input type="text" name="name" data-conv-question="Fine good bye. Take care.">
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="dist/autosize.min.js"></script>
+	<script type="text/javascript" src="dist/jquery.convform.js"></script>
+	
+
+	<script>
+		var firebaseConfig = {
+		apiKey: "AIzaSyAZXGc3to2yp7j_J70Pv_guTCGApHJvkDM",
+		authDomain: "sustainability-and-welln-50823.firebaseapp.com",
+		databaseURL: "https://sustainability-and-welln-50823-default-rtdb.firebaseio.com",
+		projectId: "sustainability-and-welln-50823",
+		storageBucket: "sustainability-and-welln-50823.appspot.com",
+		messagingSenderId: "365358924949",
+		appId: "1:365358924949:web:f2f8d8c692709f7fd3479c",
+		measurementId: "G-076QNX90ER"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+	function SelectAllData(){
+            firebase.database().ref('employee disease').once('value',
+            function(AllRecords){
+                AllRecords.forEach(
+                    function(CurrentRecord){
+                        var heart = CurrentRecord.val().Heart;
+                        var bronchiectassis = CurrentRecord.val().Bronchiectasis;
+                        var diabetes = CurrentRecord.val().Diabetes;
+                        var asthma = CurrentRecord.val().Asthma;
+                        var hypoxemia = CurrentRecord.val().Hypoxemia;
+                        AddItemsToTable(heart, bronchiectasis,diabetes,asthma,hypoxemia);
+		function google(stateWrapper, ready) {
+			window.open("https://google.com");
+			ready();
+		}
+		function bing(stateWrapper, ready) {
+			window.open("https://bing.com");
+			ready();
+		}
+		var rollbackTo = false;
+		var originalState = false;
+		function storeState(stateWrapper, ready) {
+			rollbackTo = stateWrapper.current;
+			console.log("storeState called: ",rollbackTo);
+			ready();
+		}
+		function rollback(stateWrapper, ready) {
+			console.log("rollback called: ", rollbackTo, originalState);
+			console.log("answers at the time of user input: ", stateWrapper.answers);
+			if(rollbackTo!=false) {
+				if(originalState==false) {
+					originalState = stateWrapper.current.next;
+						console.log('stored original state');
+				}
+				stateWrapper.current.next = rollbackTo;
+				console.log('changed current.next to rollbackTo');
+			}
+			ready();
+		}
+		function restore(stateWrapper, ready) {
+			if(originalState != false) {
+				stateWrapper.current.next = originalState;
+				console.log('changed current.next to originalState');
+			}
+			ready();
+		}
+	</script>
+	<script>
+		jQuery(function($){
+			var convForm = $('#chat').convform();
+			console.log(convForm);
+		});
+	</script>
+</body>
+</html>
