@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "icon" href =  "https://i.dlpng.com/static/png/6986235_preview.png" type = "image/x-icon">
+	<title>Sustainability and Wellness  | Login </title>
+	
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.2.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.2.4/firebase-performance.js"></script>
+    <!--
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="bg-img">
+        <div class="content">
+          <header>Login Form</header>
+          <form action="#">
+            <div class="field">
+              <span class="fa fa-user"></span>
+              <input type="text" required placeholder="Email Id" id="email_field" >
+            </div>
+  <div class="field space">
+              <span class="fa fa-lock"></span>
+              <input type="password" class="pass-key" required placeholder="Password" id="password_field">
+              <span class="show">SHOW</span>
+            </div>
+            <br>
+
+            <div class="infield">
+              <button class="btn transprent"  id="sign-up-btn">
+                 <a href="admin_page_tc.html" style="text-decoration: none; color: white;" > LOGIN</a>
+              </button> 
+            </div>
+
+  </form>
+  <div class="pass">
+    <a href="#">Forgot Password?</a>
+  </div>
+
+  <br>
+  <div class="signup">
+  Don't have account?
+            <a href="register.html">Signup Now</a>
+          </div>
+  </div>
+  </div>
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script>
+        const pass_field = document.querySelector('.pass-key');
+        const showBtn = document.querySelector('.show');
+        showBtn.addEventListener('click', function(){
+         if(pass_field.type === "password"){
+           pass_field.type = "text";
+           showBtn.textContent = "HIDE";
+           showBtn.style.color = "#3498db";
+         }else{
+           pass_field.type = "password";
+           showBtn.textContent = "SHOW";
+           showBtn.style.color = "#222";
+         }
+        });
+      </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.2.6/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.2.6/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAZXGc3to2yp7j_J70Pv_guTCGApHJvkDM",
+    authDomain: "sustainability-and-welln-50823.firebaseapp.com",
+    databaseURL: "https://sustainability-and-welln-50823-default-rtdb.firebaseio.com",
+    projectId: "sustainability-and-welln-50823",
+    storageBucket: "sustainability-and-welln-50823.appspot.com",
+    messagingSenderId: "365358924949",
+    appId: "1:365358924949:web:f2f8d8c692709f7fd3479c",
+    measurementId: "G-076QNX90ER"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="index.js"></script>
+  </body>
+</html>
